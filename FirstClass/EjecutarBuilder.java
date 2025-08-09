@@ -4,16 +4,16 @@ public class EjecutarBuilder {
         Converter objC2= new PostScriptConverter();
         Converter objC3 = new PDFConverter();
 
-        Reader objReader1 = new Reader("Linea", objC1);
-        Reader objReader2= new Reader("Linea", objC3);
+        Reader objReader1 = new Reader(objC1);
+        Reader objReader2 = new Reader(objC3);
 
-        Reader objReader3 = new Reader("Linea", objC2);
-        Reader objReader4 = new Reader("Linea", objC3);
+        Reader objReader3 = new Reader(objC2);
+        Reader objReader4 = new Reader(objC3);
 
-        objReader1.parseInput(); //Linea con ASCII
-        objReader2.parseInput(); //Lines con PDF
-        objReader3.parseInput(); //Linea con postScript
-        objReader4.parseInput(); // Linea con PDF
+        objReader1.parseInput("LINEA"); //Linea con ASCII
+        objReader2.parseInput("LINEA"); //Lines con PDF
+        objReader3.parseInput("PARRAFO"); //Linea con postScript
+        objReader4.parseInput("TABLA"); // Linea con PDF
     
      }
 }

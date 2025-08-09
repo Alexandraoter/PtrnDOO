@@ -1,14 +1,13 @@
 public class Reader{
 
-    private String element;
+   
     private Converter converter;
 
     public Reader(String element, Converter converter){
-        this.element = element;
         this.converter = converter;
     }
 
-    public void parseInput(){
+    public void parseInput(String element ){
         switch (element){
             case "LINEA":
                 converter.makeLine();
