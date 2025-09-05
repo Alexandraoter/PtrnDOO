@@ -18,16 +18,15 @@ public class Inventario {
     }
 
     public Vehiculo buscarPorPlaca(String placa) {
-        for (Vehiculo v : vehiculos) {
-            if (v != null && v.getPlaca().equalsIgnoreCase(placa)) {
-                return v;
-            }
+        for (int i = 0; i < contador; i++) {
+            Vehiculo v = vehiculos[i];
+            if (v.getPlaca().equalsIgnoreCase(placa)) return v;
         }
         return null;
     }
 
     public void ordenarPorAutonomia() {
-        Arrays.sort(vehiculos, 0, contador, (v1, v2) -> Double.compare(v1.getAutonomia(), v2.getAutonomia()));
+        Arrays.sort(vehiculos, 0, contador, (a, b) -> Double.compare(a.getAutonomia(), b.getAutonomia()));
     }
 
     public void mostrarInventario() {

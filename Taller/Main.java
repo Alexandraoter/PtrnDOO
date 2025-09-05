@@ -1,27 +1,32 @@
 public class Main {
     public static void main(String[] args) {
-        // Inventario usando Factory Method
-        VehiculoFactory autoFactory = new AutoFactory();
-        VehiculoFactory vanFactory = new VanFactory();
-        
+        VehiculoFactory factory = new VehiculoFactory();
+
+        // Inventario (array fijo) + creación mediante un único Factory Method
         Inventario inventario = new Inventario(5);
-        inventario.agregarVehiculo(autoFactory.crearVehiculo("ABC123", 300, "Toyota Yaris"));
-        inventario.agregarVehiculo(vanFactory.crearVehiculo("XYZ789", 500, "Mercedes Vito"));
-        
+
+        Vehiculo v1 = factory.crearVehiculo(TipoVehiculo.AUTO, "ABC123", 350, "Toyota Corolla");
+        Vehiculo v2 = factory.crearVehiculo(TipoVehiculo.VAN, "XYZ789", 520, "Mercedes Vito");
+        Vehiculo v3 = factory.crearVehiculo(TipoVehiculo.CAMION, "JKL456", 700, "Isuzu NKR");
+
+        inventario.agregarVehiculo(v1);
+        inventario.agregarVehiculo(v2);
+        inventario.agregarVehiculo(v3);
+
+        System.out.println("=== Inventario inicial ===");
         inventario.mostrarInventario();
+
         inventario.ordenarPorAutonomia();
-        System.out.println("\nInventario ordenado por autonomía:");
+        System.out.println("\n=== Inventario ordenado por autonomía ===");
         inventario.mostrarInventario();
 
-        // Contratos usando Abstract Factory
-        ContratoFactory particularFactory = new ContratoParticularFactory();
-        Contrato contratoParticular = new Contrato("Juan Pérez", inventario.buscarPorPlaca("ABC123"), particularFactory);
-        contratoParticular.mostrarContrato();
+        // Contratos usando los métodos de plan y accesorios (sin clases extra)
+        System.out.println("\n=== Contratos ===");
+        Contrato c1 = new Contrato("Juan Pérez", factory, TipoVehiculo.AUTO, "ABC123", 350, "Toyota Corolla");
+        c1.mostrarContrato();
 
-        System.out.println("--------------");
-
-        ContratoFactory empresarialFactory = new ContratoEmpresarialFactory();
-        Contrato contratoEmpresarial = new Contrato("Empresa XYZ", inventario.buscarPorPlaca("XYZ789"), empresarialFactory);
-        contratoEmpresarial.mostrarContrato();
+        System.out.println("----------------------------");
+        Contrato c2 = new Contrato("Empresa XYZ", factory, TipoVehiculo.VAN, "XYZ789", 520, "Mercedes Vito");
+        c2.mostrarContrato();
     }
 }

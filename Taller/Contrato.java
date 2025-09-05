@@ -1,26 +1,30 @@
-// Contrato.java
 import java.util.List;
 
 public class Contrato {
     private String cliente;
     private Vehiculo vehiculo;
-    private Plan plan;
-    private List<Accesorio> accesorios;
+    private String plan;
+    private List<String> accesorios;
 
-    public Contrato(String cliente, Vehiculo vehiculo, ContratoFactory factory) {
+    public Contrato(String cliente,
+                    VehiculoFactory factory,
+                    TipoVehiculo tipo,
+                    String placa,
+                    double autonomia,
+                    String modelo) {
+
         this.cliente = cliente;
-        this.vehiculo = vehiculo;
-        this.plan = factory.crearPlan();
-        this.accesorios = factory.crearAccesorios();
+        this.vehiculo = factory.crearVehiculo(tipo, placa, autonomia, modelo);
+        this.plan = factory.crearPlan(tipo);
+        this.accesorios = factory.crearAccesorios(tipo);
     }
 
     public void mostrarContrato() {
         System.out.println("Contrato para cliente: " + cliente);
         vehiculo.mostrarInfo();
-        System.out.println("Plan: " + plan.getDescripcion());
-        System.out.println("Accesorios incluidos:");
-        for (Accesorio a : accesorios) {
-            System.out.println("- " + a.getNombre());
-        }
+        System.out.println("Plan: " + plan);
+        System.out.println("Accesorios:");
+        for (String a : accesorios) System.out.println("- " + a);
     }
 }
+

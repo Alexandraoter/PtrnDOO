@@ -5,6 +5,6 @@ public class Van extends Vehiculo {
 
     @Override
     public void mostrarInfo() {
-        System.out.println("Van - Placa: " + placa + ", Autonomía: " + autonomia + " km, Modelo: " + modelo);
+        System.out.println("Van  - Placa: " + placa + ", Autonomía: " + autonomia + " km, Modelo: " + modelo);
     }
 }
