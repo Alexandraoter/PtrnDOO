@@ -5,7 +5,7 @@ public class Pollo extends Decorator {
 
     @Override
     public String obtenerDescripcion() {
-        return super.obtenerDescripcion() + ", Pepperoni";
+        return super.obtenerDescripcion() + ", Pollo";
     }
 
     @Override
