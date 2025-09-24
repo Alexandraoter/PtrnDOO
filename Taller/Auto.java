@@ -8,3 +8,4 @@ public class Auto extends Vehiculo {
         System.out.println("Auto - Placa: " + placa + ", Autonomía: " + autonomia + " km, Modelo: " + modelo);
     }
 }
+k
