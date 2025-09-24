@@ -1,9 +1,9 @@
 public class EjemploComposite {
     public static void main(String[] args) {
-        // Crear un directorio principal
+        //directorio principal
         Directorio directorioRaiz = new Directorio("Carpeta Principal");
 
-        // Crear archivos
+        //archivos
         Archivo archivo1 = new Archivo("documento.txt");
         Archivo archivo2 = new Archivo("imagen.jpg");
 
