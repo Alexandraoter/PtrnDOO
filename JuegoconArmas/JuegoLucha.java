@@ -44,9 +44,9 @@ public class JuegoLucha {
         System.out.println(defensor.getNombre() + " ahora tiene " + defensor.getPuntosDeVida() + " puntos de vida.");
     }
     
-    // Método principal para probar
+
     public static void main(String[] args) {
-        JuegoLucha juego = new JuegoLucha("Goku", "Vegeta");
+        JuegoLucha juego = new JuegoLucha("Lulo", "Lulito");
         juego.iniciarPelea();
     }
 }
