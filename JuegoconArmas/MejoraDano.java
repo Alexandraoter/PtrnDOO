@@ -10,7 +10,6 @@ public class MejoraDano extends DecoradorArma {
 
     @Override
     public int getAfectacion() {
-        // Añade el aumento al daño base o previamente decorado
         return super.getAfectacion() + aumentoDano;
     }
 

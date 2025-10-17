@@ -11,5 +11,5 @@ public class EfectoCritico extends DecoradorArma {
         return super.mostrarDetalles() + " | ¡Añade Chance de CRÍTICO! ⭐";
     }
     
-    // El daño no se modifica aquí, solo la descripción
+    
 }

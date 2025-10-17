@@ -4,13 +4,13 @@ public class JuegoLucha {
     private Personaje jugador1;
     private Personaje jugador2;
 
-    // Constructor para inicializar los personajes
+    
     public JuegoLucha(String nombre1, String nombre2) {
         this.jugador1 = new Lulo(nombre1);
         this.jugador2 = new Lulito(nombre2);
     }
 
-    // Metodo para iniciar la pelea
+    
     public void iniciarPelea() {
         System.out.println("--- INICIO DE LA PELEA ---");
         System.out.println(jugador1.getNombre() + " (Vida: " + jugador1.getPuntosDeVida() + ") vs " + 
@@ -26,7 +26,7 @@ public class JuegoLucha {
             }
         }
 
-        // Mostrar el resultado de la pelea
+       
         if (jugador1.estaVivo()) {
             System.out.println("--------------------------");
             System.out.println(jugador1.getNombre() + " ha ganado la pelea.");
@@ -36,7 +36,7 @@ public class JuegoLucha {
         }
     }
 
-    // Metodo que representa un turno de ataque
+    // Metodo turno de ataque
     private void turno(Personaje atacante, Personaje defensor) {
         System.out.println("\n*** Turno de " + atacante.getNombre() + ". Vida de " + defensor.getNombre() + ": "
                 + defensor.getPuntosDeVida() + " ***");

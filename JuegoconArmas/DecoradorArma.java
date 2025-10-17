@@ -7,7 +7,7 @@ abstract class DecoradorArma implements I_Arma {
         this.armaDecorada = armaDecorada;
     }
 
-    // Delega la ejecución a la arma envuelta por defecto
+    
     @Override
     public String getNombre() {
         return armaDecorada.getNombre();

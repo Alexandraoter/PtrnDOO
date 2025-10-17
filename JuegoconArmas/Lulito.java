@@ -7,16 +7,14 @@ public class Lulito extends Personaje {
         super(nombre);
         this.puntosDeVida = 80;
         
-        // **IMPLEMENTACIÓN DECORATOR:**
-        // 1. Arma base: Cuchillo
+        
+        
         I_Arma cuchilloBase = new ArmaBase("Cuchillo", 5);
-        // 2. Decoramos con MejoraDano (+5)
         I_Arma cuchilloMejorado = new MejoraDano(cuchilloBase, 5); // Daño final: 10
-        // No se usa Composite en Lulito por simplicidad, solo ataques simples.
         this.arma = cuchilloMejorado;
     }
 
-    // Metodo para realizar un ataque a otro personaje
+   
     public void atacar(Personaje oponente) {
         String ataqueNombre = "";
         int dano = 0;
