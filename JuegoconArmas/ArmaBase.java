@@ -1,4 +1,3 @@
-//componente concreto
 package JuegoconArmas;
 public class ArmaBase implements I_Arma {
     
